@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h2>Laboratory work #3</h2>
+  <h4>Technical Task:</h4>
+  <div class="jumbotron">
+    In the Sebour island in one moment of time were counted: <br>
+    - 13 red <br>
+    - 16 green <br>
+    - 17 blue <br>
+    chameleons. If two of them have a meeting and they have different colours they simultaneously changing their colors to the third one.
+    <br>
+    Is it possible that in one moment in island all chameleons become one colour?
+  </div>
+  <h4>Algorithm: Breadth First Search</h4>
+  <button class="btn btn-outline-dark btn-lg" (click)="startAlgorithm()">START THE ALGORITHM</button>
+  <div *ngIf="resultFound">
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Iteration</td>
+        <td>{{result.iteration}}</td>
+      </tr>
+      <tr>
+        <td>Case</td>
+        <td>{{result.case}}</td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+:host {
+  .new-relation {
+    display: flex;
+    padding: 15px 0;
+    align-items: center;
+    max-width: 500px;
+    label {
+      white-space: nowrap;
+      margin: 0 15px 0 15px;
+    }
+    button {
+      margin-left: 10px;
+      height: 100%;
+    }
+  }
+}

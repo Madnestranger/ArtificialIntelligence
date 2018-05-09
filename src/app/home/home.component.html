@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h2>Laboratory work #1</h2>
+  <h3><label for="leftRelation">Please insert bounds</label></h3>
+  <div class="relations">
+    <div class="relation" *ngFor="let relation of relations">{{relation.name}}</div>
+  </div>
+  <div class="new-relation">
+    <input type="text" [(ngModel)]="leftRelation" class="form-control" id="leftRelation">
+    <label for="rightRelation"> --- </label>
+    <input type="text" [(ngModel)]="rightRelation" class="form-control" id="rightRelation">
+    <button class="btn btn-outline-primary btn-sm" (click)="addRelation()" [disabled]="!leftRelation || !rightRelation">
+      ADD
+    </button>
+  </div>
+  <button class="btn btn-outline-dark" (click)="showComponents()" style="text-transform: uppercase;" [disabled]="relations.length < 1">Show graph
+    components
+  </button>
+  <div class="components" *ngIf="components.length > 0">
+    <h3>Components in graph described at the top</h3>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Bounds Quantity</th>
+        <th>Bounds</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let component of components; let i = index;">
+        <td>{{i + 1}}</td>
+        <td>{{component.length}}</td>
+        <td>
+          <span class="bound" *ngFor="let bound of component; let k = index;">{{bound}}<span *ngIf="k !== (component.length - 1)">, </span></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
