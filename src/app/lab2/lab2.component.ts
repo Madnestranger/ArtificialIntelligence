@@ -90,6 +90,15 @@ export class Lab2Component implements OnInit {
       iteration,
       case: this.currentState.red === this.currentState.blue ? 'All Become Green' : this.currentState.red === this.currentState.green ? 'All Become Blue' : this.currentState.green === this.currentState.blue ? 'All Become Red' : 'No'
     };
+    if (this.currentState.red === this.currentState.blue) {
+      this.result.iteration = this.result.iteration + this.currentState.red;
+    }
+    if (this.currentState.green === this.currentState.blue) {
+      this.result.iteration = this.result.iteration + this.currentState.green;
+    }
+    if (this.currentState.red === this.currentState.green) {
+      this.result.iteration = this.result.iteration + this.currentState.red;
+    }
     console.log('answer finded');
     console.log('iteration:' + iteration);
   }
